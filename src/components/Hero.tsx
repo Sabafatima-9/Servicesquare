@@ -47,6 +47,32 @@ export default function Hero() {
             Your browser does not support the video tag.
           </video>
           <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/50 to-blue-900/70"></div>
+          
+          {/* WhatsApp Floating Button */}
+          <a 
+            href="https://wa.me/917842595947" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full p-3 shadow-xl flex items-center justify-center z-50 transition-all duration-300 group"
+            aria-label="Chat on WhatsApp"
+            title="Chat with us on WhatsApp"
+          >
+            <div className="relative flex items-center">
+              <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
+              </svg>
+              <div className="absolute -right-1 -bottom-1 w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                <span className="text-xs font-bold text-[#25D366]">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clipRule="evenodd" />
+                  </svg>
+                </span>
+              </div>
+              <span className="absolute left-full ml-3 px-3 py-1.5 bg-white text-gray-800 text-sm font-medium rounded-md shadow-lg opacity-0 group-hover:opacity-100 whitespace-nowrap transition-opacity duration-200">
+                Chat with us!
+              </span>
+            </div>
+          </a>
         </div>
         
         {/* Content */}
@@ -62,22 +88,93 @@ export default function Hero() {
               24/7 Professional Repair Services for all your home and commercial appliances.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 px-4">
-              <button
-                onClick={() => setShowCallModal(true)}
-                className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-blue-900/30 text-sm sm:text-base"
-              >
-                <Phone size={20} className="flex-shrink-0" />
-                <span>Call Now</span>
-              </button>
-              <button
-                onClick={() => setShowQuoteModal(true)}
-                className="flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white/10 font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 transform hover:scale-105 backdrop-blur-sm text-sm sm:text-base"
-              >
-                <span>Get a Quote</span>
-              </button>
+            <div className="w-full max-w-2xl mx-auto px-4">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full">
+                {/* Call Now Button */}
+                <button
+                  onClick={() => setShowCallModal(true)}
+                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-800 hover:from-blue-700 hover:to-blue-900 text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 hover:shadow-lg hover:shadow-blue-900/30 text-sm sm:text-base whitespace-nowrap"
+                >
+                  <Phone size={18} className="flex-shrink-0" />
+                  <span>Call Now</span>
+                </button>
+
+                {/* WhatsApp Button */}
+                <a
+                  href="https://wa.me/917842595947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20bd5a] hover:to-[#0f7d5f] text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 hover:shadow-lg hover:shadow-[#25D366]/30 text-sm sm:text-base whitespace-nowrap"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
+                  </svg>
+                  <span>WhatsApp</span>
+                </a>
+                <a
+                  href="https://wa.me/917842595947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20bd5a] hover:to-[#0f7d5f] text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-[#25D366]/40 text-sm sm:text-base whitespace-nowrap border-2 border-white/20 hover:border-white/30 group"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <svg 
+                      className="w-5 h-5 flex-shrink-0 relative z-10" 
+                      fill="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
+                    </svg>
+                  </div>
+                  <span className="font-medium">+91 78425 95947</span>
+                </a>
+              </div>
+
+              <div className="mt-3 sm:mt-4 w-full flex flex-col sm:flex-row gap-3 sm:gap-4">
+                <button
+                  onClick={() => setShowQuoteModal(true)}
+                  className="flex-1 flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border-2 border-white/30 hover:border-white/50 text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 hover:bg-white/20 text-sm sm:text-base whitespace-nowrap"
+                >
+                  <span>Get a Free Quote</span>
+                </button>
+                
+                <a
+                  href="https://wa.me/917842595947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-[#25D366]/40 text-sm sm:text-base whitespace-nowrap border-2 border-white/20 hover:border-white/30 group"
+                  aria-label="Chat on WhatsApp"
+                >
+                  <svg 
+                    className="w-5 h-5 flex-shrink-0" 
+                    fill="currentColor" 
+                    viewBox="0 0 24 24" 
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
+                  </svg>
+                  <span className="font-medium">Chat Now</span>
+                </a>
+              </div>
             </div>
           </div>
+
+          {/* WhatsApp Floating Button */}
+          <a 
+            href="https://wa.me/917842595947" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#128C7E] text-white shadow-lg hover:shadow-xl hover:shadow-[#25D366]/40 transition-all duration-300 transform hover:scale-110"
+            aria-label="Chat with us on WhatsApp"
+          >
+            <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
+            </svg>
+          </a>
         </div>
       </section>
 
@@ -101,14 +198,25 @@ export default function Hero() {
                   className="block w-full bg-gradient-to-r from-blue-600 to-blue-800 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-900/30 text-base sm:text-lg"
                 >
                   <Phone size={20} className="flex-shrink-0" />
-                  <span>Call: 7842595947 (MD Noorullah)</span>
+                  <span>Call: 7842595947</span>
                 </a>
                 <a
                   href="tel:7842595945"
                   className="block w-full bg-gradient-to-r from-blue-700 to-blue-900 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-900/30 text-base sm:text-lg"
                 >
                   <Phone size={20} className="flex-shrink-0" />
-                  <span>Call: 7842595945 (Shaik Azeez)</span>
+                  <span>Call: 7842595945</span>
+                </a>
+                <a
+                  href="https://wa.me/917842595947"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-green-900/30 text-base sm:text-lg"
+                >
+                  <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
+                  </svg>
+                  <span>Chat on WhatsApp</span>
                 </a>
               </div>
               <p className="mt-4 text-gray-500 text-xs sm:text-sm">Available 24/7 for emergency repairs</p>
