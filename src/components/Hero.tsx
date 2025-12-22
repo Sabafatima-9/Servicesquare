@@ -169,17 +169,6 @@ export default function Hero() {
                   <Phone size={20} className="flex-shrink-0" />
                   <span>Call: 7842595945</span>
                 </a>
-                <a
-                  href="https://wa.me/917842595947"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full bg-gradient-to-r from-green-600 to-green-700 text-white px-4 py-3 sm:px-6 sm:py-4 rounded-lg font-semibold hover:opacity-90 transition-all duration-300 text-center flex items-center justify-center gap-2 shadow-lg hover:shadow-green-900/30 text-base sm:text-lg"
-                >
-                  <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
-                  </svg>
-                  <span>Chat on WhatsApp</span>
-                </a>
               </div>
               <p className="mt-4 text-gray-500 text-xs sm:text-sm">Available 24/7 for emergency repairs</p>
             </div>
