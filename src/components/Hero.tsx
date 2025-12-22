@@ -99,9 +99,9 @@ export default function Hero() {
                   <span>Call Now</span>
                 </button>
 
-                {/* WhatsApp Button */}
+                {/* WhatsApp Button with Default Message */}
                 <a
-                  href="https://wa.me/917842595947"
+                  href="https://wa.me/917842595947?text=Can%20I%20get%20more%20information%20about%20your%20services%20also"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20bd5a] hover:to-[#0f7d5f] text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 hover:shadow-lg hover:shadow-[#25D366]/30 text-sm sm:text-base whitespace-nowrap"
@@ -112,26 +112,6 @@ export default function Hero() {
                   </svg>
                   <span>WhatsApp</span>
                 </a>
-                <a
-                  href="https://wa.me/917842595947"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#20bd5a] hover:to-[#0f7d5f] text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-[#25D366]/40 text-sm sm:text-base whitespace-nowrap border-2 border-white/20 hover:border-white/30 group"
-                  aria-label="Chat on WhatsApp"
-                >
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <svg 
-                      className="w-5 h-5 flex-shrink-0 relative z-10" 
-                      fill="currentColor" 
-                      viewBox="0 0 24 24" 
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
-                    </svg>
-                  </div>
-                  <span className="font-medium">+91 78425 95947</span>
-                </a>
               </div>
 
               <div className="mt-3 sm:mt-4 w-full flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -141,24 +121,6 @@ export default function Hero() {
                 >
                   <span>Get a Free Quote</span>
                 </button>
-                
-                <a
-                  href="https://wa.me/917842595947"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold py-3 px-4 sm:py-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-[1.02] active:scale-95 shadow-lg hover:shadow-[#25D366]/40 text-sm sm:text-base whitespace-nowrap border-2 border-white/20 hover:border-white/30 group"
-                  aria-label="Chat on WhatsApp"
-                >
-                  <svg 
-                    className="w-5 h-5 flex-shrink-0" 
-                    fill="currentColor" 
-                    viewBox="0 0 24 24" 
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M17.498 14.382c-.3-.15-1.767-.867-2.04-.966-.274-.1-.473-.15-.673.15-.197.295-.771.964-.944 1.162-.175.195-.349.21-.646.075-.3-.15-1.263-.465-2.403-1.485-.888-.795-1.484-1.77-1.66-2.07-.17-.29-.015-.45.13-.59.137-.135.301-.345.451-.523.146-.181.194-.301.297-.496.1-.21.049-.375-.025-.524-.076-.15-.672-1.62-.922-2.206-.24-.584-.487-.51-.672-.516-.172-.008-.371-.01-.571-.01-.2 0-.523.074-.797.36-.274.3-1.045 1.02-1.045 2.475s1.07 2.865 1.219 3.075c.149.195 2.105 3.195 5.1 4.485.714.3 1.27.48 1.704.629.714.227 1.365.195 1.88.121.574-.09 1.767-.721 2.016-1.426.255-.705.255-1.29.18-1.425-.074-.135-.27-.21-.57-.36m-5.446 7.443h-.016c-1.77 0-3.524-.48-5.055-1.38l-.36-.214-3.75.975 1.005-3.645-.239-.375a11.7 11.7 0 01-1.83-6.25 11.7 11.7 0 012.6-7.32A11.7 11.7 0 0111.98.75c3.1 0 6.055 1.2 8.29 3.39a11.7 11.7 0 013.43 8.29 11.7 11.7 0 01-3.43 8.29 11.7 11.7 0 01-8.29 3.39z" />
-                  </svg>
-                  <span className="font-medium">Chat Now</span>
-                </a>
               </div>
             </div>
           </div>
