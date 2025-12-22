@@ -68,63 +68,94 @@ export default function Services() {
   const { ref: servicesRef, isVisible: servicesVisible } = useScrollAnimation();
 
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div 
           ref={titleRef}
-          className={`text-center mb-16 ${titleVisible ? 'scroll-animate-visible' : 'scroll-animate-up'}`}
+          className={`text-center mb-12 sm:mb-16 ${titleVisible ? 'scroll-animate-visible' : 'scroll-animate-up'}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#333333] mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#1e3f7a] mb-3 sm:mb-4">
             Our Services
           </h2>
-          <p className="text-xl text-[#6B7280] max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-[#4B5563] max-w-2xl mx-auto px-2">
             Professional repair and maintenance for all your appliances
           </p>
         </div>
 
         <div 
           ref={servicesRef}
-          className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${servicesVisible ? 'scroll-animate-visible' : 'scroll-animate-up'}`}
+          className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 ${servicesVisible ? 'scroll-animate-visible' : 'scroll-animate-up'}`}
         >
           {services.map((service, index) => {
-            const delay = index * 0.1;
+            const Icon = service.icon;
+            const delay = Math.min(index * 0.05, 0.3);
             return (
-            <div
-              key={index}
-              className={`bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transform-gpu transition-all duration-300 hover:scale-105 hover:-translate-y-2 hover:shadow-xl hover:border-[#2E5AAC]/20 group will-change-transform ${
-                servicesVisible ? 'scroll-animate-visible' : index % 2 === 0 ? 'scroll-animate-left' : 'scroll-animate-right'
-              }`}
-              style={{ perspective: 1000, transitionDelay: `${delay}s` }}
-            >
-              <div className="relative h-56 bg-gray-50 overflow-hidden">
-                <img
-                  src={service.image}
-                  alt={service.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 transform-gpu"
-                />
-              </div>
-              <div className="p-6">
-                <div className="flex items-center gap-4 mb-4">
-                  <div className="bg-[#2E5AAC]/10 p-3 rounded-lg group-hover:bg-[#2E5AAC] transition-colors duration-300">
-                    <service.icon
-                      size={28}
-                      className="text-[#2E5AAC] group-hover:text-white transition-colors duration-300"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-[#333333]">{service.title}</h3>
+              <div
+                key={index}
+                className={`bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transform-gpu transition-all duration-300 
+                  hover:scale-[1.02] hover:-translate-y-1 hover:shadow-lg hover:border-[#2E5AAC]/30 group will-change-transform active:scale-95
+                  ${servicesVisible ? 'scroll-animate-visible' : 'opacity-0 translate-y-4'}`}
+                style={{
+                  transitionDelay: `${delay}s`,
+                  transitionProperty: 'transform, box-shadow, border-color, opacity',
+                  animation: servicesVisible ? `fadeInUp 0.5s ease-out ${delay}s forwards` : 'none'
+                }}
+              >
+                <div className="relative h-48 sm:h-56 bg-gray-50 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out transform-gpu"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
-                <p className="text-[#6B7280] leading-relaxed">{service.description}</p>
+                <div className="p-5 sm:p-6">
+                  <div className="flex items-start gap-4 mb-3 sm:mb-4">
+                    <div className="bg-[#2E5AAC]/10 p-2.5 sm:p-3 rounded-lg group-hover:bg-[#2E5AAC] transition-colors duration-300 flex-shrink-0">
+                      <Icon
+                        size={24}
+                        className="text-[#2E5AAC] group-hover:text-white transition-colors duration-300"
+                      />
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-bold text-[#1e3f7a] leading-tight mt-1">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-sm sm:text-base text-[#4B5563] leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
-            </div>
-          );
+            );
           })}
         </div>
 
-        <About />
-        <Testimonials />
+        <div className="mt-16 sm:mt-20">
+          <About />
+        </div>
+        
+        <div className="mt-16 sm:mt-20">
+          <Testimonials />
+        </div>
 
-        <ServiceAreas />
+        <div className="mt-16 sm:mt-20">
+          <ServiceAreas />
+        </div>
       </div>
+
+      <style jsx global>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </section>
   );
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu as MenuIcon, X as CloseIcon, Phone as PhoneIcon } from 'lucide-react';
 import logoImage from '../logo.svg.jpeg';
 
 export default function Header() {
@@ -29,20 +29,20 @@ export default function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <div className="flex items-center gap-3">
+        <div className="flex justify-between items-center h-16 md:h-20">
+          <div className="flex items-center gap-2 md:gap-3">
             <img
               src={logoImage}
               alt="Service Square Repair Service Association"
-              className="h-14 w-auto object-contain"
+              className="h-10 w-auto object-contain md:h-14"
             />
-            <h1 className="text-2xl font-bold text-[#1e3f7a]">Service Square</h1>
+            <h1 className="text-xl md:text-2xl font-bold text-[#1e3f7a] whitespace-nowrap">Service Square</h1>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <button
               onClick={() => scrollToSection('home')}
-              className="nav-link text-[#333333] hover:text-[#2E5AAC] font-semibold text-lg transition-colors duration-200 relative group"
+              className="nav-link text-[#333333] hover:text-[#2E5AAC] font-semibold text-base lg:text-lg transition-colors duration-200 relative group"
             >
               Home
               <span className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[#2E5AAC] transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -75,16 +75,19 @@ export default function Header() {
               href="tel:7842595947"
               className="bg-[#1e3f7a] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#2E5AAC] transition-transform duration-300 transform-gpu hover:scale-105 hover:shadow-lg flex items-center gap-2 will-change-transform"
             >
-              <Phone size={18} />
+              <PhoneIcon size={28} />
               Book Service
             </a>
           </div>
-
           <button
-            className="md:hidden text-[#333333]"
+            className="md:hidden flex justify-center w-10 h-10 bg-[#1e3f7a] text-white rounded-full"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? (
+              <CloseIcon size={28} />
+            ) : (
+              <MenuIcon size={28} />
+            )}
           </button>
         </div>
 
