@@ -5,6 +5,7 @@ import Features from './components/Features';
 // About and Testimonials are now included within the Services page
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import WhatsAppContact from './components/WhatsAppContact';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppContact />
     </div>
   );
 }
