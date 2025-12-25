@@ -1,11 +1,15 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Phone } from 'lucide-react';
 import ServiceSelection from './ServiceSelection';
+import ServiceHeader from './ServiceHeader';
 
 const PHONE = '7842595947';
 
 export default function ServiceAreas() {
   const [selectedServices, setSelectedServices] = useState<Record<string, string[]>>({});
+  const [currentLocation, setCurrentLocation] = useState('Hyderabad');
+  const [isLoadingLocation, setIsLoadingLocation] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const handleServiceSelect = (serviceId: string, areas: string[]) => {
     setSelectedServices(prev => ({
@@ -13,6 +17,16 @@ export default function ServiceAreas() {
       [serviceId]: areas
     }));
   };
+
+  const handleLocationSelect = useCallback((location: string) => {
+    setCurrentLocation(location);
+    // You can add additional location handling logic here
+  }, []);
+
+  const handleSearch = useCallback((query: string) => {
+    setSearchQuery(query);
+    // Implement search functionality as needed
+  }, []);
 
   const selectedCount = useMemo(() => {
     return Object.values(selectedServices).reduce((sum, areas) => sum + areas.length, 0);
@@ -22,30 +36,52 @@ export default function ServiceAreas() {
     return Object.keys(selectedServices).filter(id => selectedServices[id].length > 0).length;
   }, [selectedServices]);
 
+  // Filter services based on search query
+  const filteredServices = useMemo(() => {
+    if (!searchQuery) return selectedServices;
+    
+    const query = searchQuery.toLowerCase();
+    return Object.entries(selectedServices).reduce((acc, [serviceId, areas]) => {
+      const serviceName = serviceId.split('-').join(' ');
+      if (serviceName.includes(query)) {
+        acc[serviceId] = areas;
+      }
+      return acc;
+    }, {} as Record<string, string[]>);
+  }, [selectedServices, searchQuery]);
+
   return (
-    <section id="service-areas" className="py-8 sm:py-12 md:py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-            Our Service Areas in Hyderabad
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600">
-            We provide expert appliance repair services across all major areas in Hyderabad.
-            Select your services and locations below.
+    <div className="min-h-screen bg-gray-50">
+      {/* Swiggy-style Header */}
+      <ServiceHeader
+        onLocationSelect={handleLocationSelect}
+        onSearch={handleSearch}
+        currentLocation={currentLocation}
+        isLoadingLocation={isLoadingLocation}
+      />
+
+      {/* Main Content */}
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="mb-8">
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">
+            Appliance Services in {currentLocation}
+          </h1>
+          <p className="text-gray-600">
+            Select the services you need for your home or business
           </p>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden mb-8">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
           <div className="p-4 sm:p-6">
             <ServiceSelection 
               onServiceSelect={handleServiceSelect}
-              selectedServices={selectedServices}
+              selectedServices={filteredServices}
             />
           </div>
         </div>
 
         {selectedCount > 0 && (
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 sm:p-8 shadow-lg">
+          <div className="mt-8 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 sm:p-8 shadow-lg">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
               <div className="text-white">
                 <h3 className="text-xl font-bold mb-2">Ready to book your service?</h3>
@@ -76,7 +112,7 @@ export default function ServiceAreas() {
             </div>
           </div>
         )}
-      </div>
-    </section>
+      </main>
+    </div>
   );
 }
