@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -7,31 +7,60 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppContact from './components/WhatsAppContact';
 
+// Debounce function to limit the rate at which a function can fire
+const debounce = (func: (...args: any[]) => void, wait: number) => {
+  let timeout: NodeJS.Timeout;
+  return function executedFunction(...args: any[]) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
 function App() {
   // Handle viewport height for mobile browsers
-  useEffect(() => {
-    // Set the app height to window height
-    const setAppHeight = () => {
-      const doc = document.documentElement;
-      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
-    };
+  const setAppHeight = useCallback(() => {
+    // Get the viewport height and set it as a CSS variable
+    const vh = window.innerHeight * 0.01;
+    const doc = document.documentElement;
+    
+    // Set the value in the document's root element
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+    doc.style.setProperty('--vh', `${vh}px`);
+    
+    // Force a reflow to ensure styles are applied
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+  }, []);
 
+  useEffect(() => {
     // Initial set
     setAppHeight();
 
-    // Update on resize and orientation change
-    window.addEventListener('resize', setAppHeight);
-    window.addEventListener('orientationchange', setAppHeight);
+    // Create debounced version of setAppHeight
+    const debouncedResizeHandler = debounce(setAppHeight, 100);
+
+    // Add event listeners
+    window.addEventListener('resize', debouncedResizeHandler);
+    window.addEventListener('orientationchange', debouncedResizeHandler);
+    window.addEventListener('load', setAppHeight);
+    
+    // For iOS Safari's viewport height changes when address bar hides/shows
+    window.visualViewport?.addEventListener('resize', debouncedResizeHandler);
 
     // Cleanup
     return () => {
-      window.removeEventListener('resize', setAppHeight);
-      window.removeEventListener('orientationchange', setAppHeight);
+      window.removeEventListener('resize', debouncedResizeHandler);
+      window.removeEventListener('orientationchange', debouncedResizeHandler);
+      window.removeEventListener('load', setAppHeight);
+      window.visualViewport?.removeEventListener('resize', debouncedResizeHandler);
     };
-  }, []);
+  }, [setAppHeight]);
 
   return (
-    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+    <div className="flex flex-col min-h-[100dvh] w-full overflow-x-hidden relative">
       <Header />
       <main className="flex-1 w-full">
         <Hero />

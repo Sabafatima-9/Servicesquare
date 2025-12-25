@@ -18,6 +18,7 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+  /* Base HTML and Body styles */
   html {
     height: 100%;
     width: 100%;
@@ -25,7 +26,70 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     touch-action: manipulation;
-    overscroll-behavior-y: none;
+    overscroll-behavior-y: contain;
+    /* Use dvh (dynamic viewport height) for better mobile support */
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+    min-height: var(--app-height);
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+    min-height: 100dvh;
+    min-height: -webkit-fill-available;
+    min-height: var(--app-height);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Mobile-specific styles */
+  @media (max-width: 640px) {
+    html {
+      font-size: 14px;
+    }
+    
+    body {
+      /* Prevent overscroll bounce on iOS */
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      height: -webkit-fill-available;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  /* Typography */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  /* Better touch targets */
+  button,
+  [role="button"],
+  [type="button"],
+  [type="submit"] {
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
