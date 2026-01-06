@@ -105,8 +105,6 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin size={20} className="text-white mt-1 flex-shrink-0" />
                 <p className="text-gray-300 text-sm">
-                  Shop no: 208, Karkhana Bazar, New General Bazar, Near Khadim Eidgha, Karkhana Bazar, Hyderabad, Telangana, India
-                </p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={20} className="text-white flex-shrink-0" />
@@ -121,7 +119,6 @@ export default function Footer() {
                     href="tel:09030782036"
                     className="text-gray-300 hover:text-white transition-colors block"
                   >
-                    09030782036
                   </a>
                 </div>
               </div>
