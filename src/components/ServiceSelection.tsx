@@ -1,7 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Phone, MapPin, ChevronDown, X, Check } from 'lucide-react';
-
-const PHONE = '7842595947';
+import { ChevronDown, X, Check, Search } from 'lucide-react';
 
 // Service data structure
 const services = [
@@ -55,19 +53,11 @@ const services = [
   },
 ];
 
-// Areas data
-const areas = [
-  'Banjara Hills', 'Jubilee Hills', 'Gachibowli', 'Hitech City', 'Kondapur',
-  'Madhapur', 'Financial District', 'Nanakramguda', 'Manikonda',
-  'Kukatpally', 'Miyapur', 'Nizampet', 'Bachupally', 'Kompally', 'Alwal',
-  'Secunderabad', 'Begumpet', 'Ameerpet', 'Punjagutta', 'Somajiguda', 'Khairatabad',
-  'Lakdikapul', 'Abids', 'Koti', 'Malakpet', 'Dilsukhnagar', 'KPHB', 'JNTU',
-  'Balanagar', 'Moosapet', 'Bharat Nagar', 'Erragadda', 'SR Nagar', 'Paradise',
-  'Mettuguda', 'Habsiguda', 'Charminar', 'Mehdipatnam', 'Near me'
-].sort((a, b) => a.localeCompare(b));
+// Areas data - Empty array since we're removing the area selection
+const areas: string[] = [];
 
 interface ServiceSelectionProps {
-  onServiceSelect: (serviceId: string, areas: string[]) => void;
+  onServiceSelect: (serviceId: string, areas: string[]) => void
   selectedServices: Record<string, string[]>;
 }
 

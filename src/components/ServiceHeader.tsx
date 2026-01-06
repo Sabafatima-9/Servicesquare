@@ -59,7 +59,7 @@ export default function ServiceHeader({
     if (navigator.geolocation) {
       // The loading state is handled by the parent component through the isLoadingLocation prop
       navigator.geolocation.getCurrentPosition(
-        (position) => {
+        () => {
           // In a real app, you would reverse geocode these coordinates
           const location = 'Current Location';
           setLocationInput(location);
