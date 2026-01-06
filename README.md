@@ -1,4 +1,4 @@
-# SERVICESQUARE — Local Development
+# SERVICESQUARE 
 
 This is a simple static site for SERVICESQUARE (appliance repair). To run locally:
 
