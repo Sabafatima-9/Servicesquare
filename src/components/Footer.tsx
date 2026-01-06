@@ -105,6 +105,8 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <MapPin size={20} className="text-white mt-1 flex-shrink-0" />
                 <p className="text-gray-300 text-sm">
+                    Narsingi, Hyderabad, Telangana – 500075
+  </p>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={20} className="text-white flex-shrink-0" />
