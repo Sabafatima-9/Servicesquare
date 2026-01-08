@@ -122,11 +122,14 @@ export default function Footer() {
                     7842595947
                   </a>
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
                   <a>
                     className="text-gray-300 hover:text-white transition-colors block"
                            </a>
 =======
 >>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
+>>>>>>> 04358c20916f89ced1f0c26381d55c6813632d2e
                 </div>
               </div>
               <div className="flex items-center gap-3">

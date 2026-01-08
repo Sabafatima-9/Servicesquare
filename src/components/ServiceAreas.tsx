@@ -94,7 +94,7 @@ services.forEach(service => {
 
 export default function ServiceAreas() {
   const [currentLocation, setCurrentLocation] = useState('Hyderabad');
-  const [_, setSearchQuery] = useState('');
+  const [, setSearchQuery] = useState('');
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [showServiceDropdown, setShowServiceDropdown] = useState(false);
   const [filteredServices, setFilteredServices] = useState(services);

@@ -10,7 +10,6 @@ export default function Contact() {
     service: '',
     message: '',
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation();
   const { ref: contentRef, isVisible: contentVisible } = useScrollAnimation();
@@ -18,7 +17,6 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
     try {
       const response = await fetch('https://formspree.io/f/your-formspree-id', {
         method: 'POST',
@@ -39,7 +37,7 @@ export default function Contact() {
       } else {
         throw new Error('Failed to send message');
       }
-    } catch (error) {
+    } catch {
       // Fallback to mailto if form submission fails
       const subject = `Service Request: ${formData.service}`;
       const body = `Name: ${formData.name}%0D%0APhone: ${formData.phone}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
@@ -78,17 +76,6 @@ export default function Contact() {
                 <div className="bg-[#2E5AAC]/10 p-3 rounded-lg">
                   <MapPin size={24} className="text-[#2E5AAC]" />
                 </div>
-                <div>
-                  <h3 className="font-bold text-[#333333] mb-2">Branch 1</h3>
-                  <p className="text-[#6B7280] whitespace-pre-line">
-                    SHOP NO 208,
-                    New General Bazar,
-                    Near Khadim Eidgha,
-                    Karkhana Bazar,
-                    Hyderabad,
-                    Telangana, India
-                  </p>
-                </div>
               </div>
             </div>
 
@@ -96,13 +83,6 @@ export default function Contact() {
               <div className="flex items-start gap-4">
                 <div className="bg-[#2E5AAC]/10 p-3 rounded-lg">
                   <MapPin size={24} className="text-[#2E5AAC]" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-[#333333] mb-2">Branch 2</h3>
-                  <p className="text-[#6B7280] whitespace-pre-line">
-                    NEAR MASJID, KARKHANA,
-                    SECUNDERABAD
-                  </p>
                 </div>
               </div>
             </div>
