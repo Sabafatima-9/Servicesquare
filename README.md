@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # SERVICESQUARE — Local Development
+=======
+# SERVICESQUARE 
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
 
 This is a simple static site for SERVICESQUARE (appliance repair). To run locally:
 

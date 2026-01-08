@@ -104,7 +104,13 @@ export default function Footer() {
             <div className="space-y-4">
               <div className="flex items-start gap-3">
                 <MapPin size={20} className="text-white mt-1 flex-shrink-0" />
+<<<<<<< HEAD
                 <p className="text-gray-300 text-sm">                </p>
+=======
+                <p className="text-gray-300 text-sm">
+                    Narsingi, Hyderabad, Telangana – 500075
+  </p>
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={20} className="text-white flex-shrink-0" />
@@ -115,9 +121,12 @@ export default function Footer() {
                   >
                     7842595947
                   </a>
+<<<<<<< HEAD
                   <a>
                     className="text-gray-300 hover:text-white transition-colors block"
                            </a>
+=======
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
                 </div>
               </div>
               <div className="flex items-center gap-3">

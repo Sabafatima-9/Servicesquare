@@ -1,7 +1,11 @@
 import { useState, useMemo } from 'react';
+<<<<<<< HEAD
 import { Phone, MapPin, ChevronDown, X, Check } from 'lucide-react';
 
 const PHONE = '7842595947';
+=======
+import { ChevronDown, X, Check, Search } from 'lucide-react';
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
 
 // Service data structure
 const services = [
@@ -55,6 +59,7 @@ const services = [
   },
 ];
 
+<<<<<<< HEAD
 // Areas data
 const areas = [
   'Banjara Hills', 'Jubilee Hills', 'Gachibowli', 'Hitech City', 'Kondapur',
@@ -68,6 +73,13 @@ const areas = [
 
 interface ServiceSelectionProps {
   onServiceSelect: (serviceId: string, areas: string[]) => void;
+=======
+// Areas data - Empty array since we're removing the area selection
+const areas: string[] = [];
+
+interface ServiceSelectionProps {
+  onServiceSelect: (serviceId: string, areas: string[]) => void
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
   selectedServices: Record<string, string[]>;
 }
 
