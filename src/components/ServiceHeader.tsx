@@ -59,7 +59,11 @@ export default function ServiceHeader({
     if (navigator.geolocation) {
       // The loading state is handled by the parent component through the isLoadingLocation prop
       navigator.geolocation.getCurrentPosition(
+<<<<<<< HEAD
+        (position) => {
+=======
         () => {
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
           // In a real app, you would reverse geocode these coordinates
           const location = 'Current Location';
           setLocationInput(location);
@@ -82,7 +86,11 @@ export default function ServiceHeader({
   };
 
   return (
+<<<<<<< HEAD
+    <div className="bg-[#fc8019] w-full py-4 px-4 sm:px-6 lg:px-8">
+=======
     <div className="bg-blue-600 w-full py-4 px-4 sm:px-6 lg:px-8">
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
       <div className="max-w-7xl mx-auto">
         <div className="space-y-3">
           {/* Location Input */}
@@ -118,7 +126,11 @@ export default function ServiceHeader({
                     <Search className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
                     <input
                       type="text"
+<<<<<<< HEAD
+                      className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+=======
                       className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
                       placeholder="Search for area"
                       value={locationInput}
                       onChange={(e) => setLocationInput(e.target.value)}

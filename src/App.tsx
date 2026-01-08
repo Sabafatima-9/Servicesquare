@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+import { useEffect } from 'react';
+=======
 import { useEffect, useCallback } from 'react';
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -7,6 +11,33 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import WhatsAppContact from './components/WhatsAppContact';
 
+<<<<<<< HEAD
+function App() {
+  // Handle viewport height for mobile browsers
+  useEffect(() => {
+    // Set the app height to window height
+    const setAppHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+
+    // Initial set
+    setAppHeight();
+
+    // Update on resize and orientation change
+    window.addEventListener('resize', setAppHeight);
+    window.addEventListener('orientationchange', setAppHeight);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', setAppHeight);
+      window.removeEventListener('orientationchange', setAppHeight);
+    };
+  }, []);
+
+  return (
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+=======
 // Debounce function to limit the rate at which a function can fire
 const debounce = (func: (...args: any[]) => void, wait: number) => {
   let timeout: NodeJS.Timeout;
@@ -61,6 +92,7 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-[100dvh] w-full overflow-x-hidden relative">
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
       <Header />
       <main className="flex-1 w-full">
         <Hero />

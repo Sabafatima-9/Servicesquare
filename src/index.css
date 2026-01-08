@@ -1,8 +1,14 @@
+<<<<<<< HEAD
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+=======
 /* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 /* stylelint-enable at-rule-no-unknown */
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
 
 @layer base {
   :root {
@@ -20,7 +26,10 @@
     -webkit-tap-highlight-color: transparent;
   }
 
+<<<<<<< HEAD
+=======
   /* Base HTML and Body styles */
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
   html {
     height: 100%;
     width: 100%;
@@ -28,6 +37,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     touch-action: manipulation;
+<<<<<<< HEAD
+    overscroll-behavior-y: none;
+=======
     overscroll-behavior-y: contain;
     /* Use dvh (dynamic viewport height) for better mobile support */
     min-height: 100vh;
@@ -92,6 +104,7 @@
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+>>>>>>> ede5f61d67259012c67ef0655a73c406269c8ffb
   }
 
   body {
